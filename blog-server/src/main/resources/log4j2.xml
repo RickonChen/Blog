@@ -6,7 +6,8 @@
     <Appenders>
         <Console name="Console-Appender" target="SYSTEM_OUT">
             <PatternLayout
-                    pattern="%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n%xwEx"/>
+                    charset="UTF-8"
+                    pattern="%clr{%d{DEFAULT}}{faint} %clr{%5p} %clr{%pid}{magenta} %clr{[%t]}{faint} %clr{%c{1.}(%M:%L)}{cyan} %clr{:}{faint} %m%n"/>
         </Console>
         <File name="App-Appender" fileName="${path}/app_log.log">
             <PatternLayout>
