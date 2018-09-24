@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("user-mangement")
+@RequestMapping("user-management")
 public class UserController {
 
     private static final Logger logger = LogManager.getLogger(UserController.class);
