@@ -1,0 +1,40 @@
+<!doctype html>
+{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>QuarkBlob</title>
+    <link rel="stylesheet" href="{% static 'base/vendor/fontawesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'base/vendor/googlefonts/opensans/font.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <a class="header-brand" href="{% url 'home' %}">
+            <i class="header-brand-logo fas fa-futbol"></i>
+            <span class="header-brand-name">Quark-Blob</span>
+        </a>
+        <ul class="menu">
+            <li class="menu-li">
+                <a class="menu-li-a {% url 'home' as home_url %} {% if request.get_full_path == home_url %} menu-li-a--active{% endif %}" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="menu-li">
+                <a class="menu-li-a" href="">ADD POST</a>
+            </li>
+            <li class="menu-li">
+                <a class="menu-li-a" href="">About</a>
+            </li>
+        </ul>
+        <div class="header-slogan">Thoughts On <strong>Artificial Intelligence</strong>.</div>
+    </div>
+
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div class="footer"></div>
+    <div class="footer-bottom">
+        @ {% now "Y" %} QuarkBlob. All rights reserved.
+    </div>
+</body>
+</html>

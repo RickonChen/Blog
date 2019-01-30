@@ -1,0 +1,19 @@
+.footer {
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+  width: 100%;
+  background: url('../images/header-bg.png') no-repeat;
+}
+
+.footer-bottom {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 0.9em;
+  background-color: #414141;
+  color: #aaa;
+  &-a {
+    color: #aaa;
+  }
+}

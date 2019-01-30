@@ -1,0 +1,30 @@
+@import "breakpoints";
+
+.menu {
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    color: #fff;
+    margin: 0;
+    display: none;
+    @include for-desktop-up {
+      display: inherit;
+    }
+  &-li {
+    display: inline-block;
+    &-a {
+      display: inline-block;
+      color: #ccc;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 1em;
+      margin: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      &--active, &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

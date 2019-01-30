@@ -1,0 +1,15 @@
+.main {
+  margin: 1em auto;
+  min-height: 500px;
+  padding: 2em;
+  background-color: #fff;
+  border: 1px solid #E8E8E8;
+  border-radius: 3px;
+}
+@media (min-width: 999px) {
+  .main {
+    width: 60em;
+  }
+}
+
+/*# sourceMappingURL=layout.css.map */

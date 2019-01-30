@@ -1,0 +1,31 @@
+@import "breakpoints";
+
+.header {
+  height: 200px;
+  width: 100%;
+  background: url('../images/header-bg.png') no-repeat;
+  &-brand {
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  &-brand-logo {
+    padding: 1em 0.7em 1em 1em;
+    color: #fff;
+  }
+  &-brand-name {
+    color: #ccc;
+  }
+  &-slogan {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    padding-top: 5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    @include for-desktop-up {
+      padding-top: 2.5em;
+    }
+  }
+}

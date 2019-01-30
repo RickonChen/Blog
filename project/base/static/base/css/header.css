@@ -1,0 +1,33 @@
+.header {
+  height: 200px;
+  width: 100%;
+  background: url("../images/header-bg.png") no-repeat;
+}
+.header-brand {
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.header-brand-logo {
+  padding: 1em 0.7em 1em 1em;
+  color: #fff;
+}
+.header-brand-name {
+  color: #ccc;
+}
+.header-slogan {
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  padding-top: 5em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+@media (min-width: 1200px) {
+  .header-slogan {
+    padding-top: 2.5em;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */
