@@ -1,2 +1,2 @@
 # blog
-A blog project written by python
+A blog project written in python
