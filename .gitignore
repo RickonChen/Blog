@@ -1,0 +1,11 @@
+# DJANGO
+__pycache__/
+*.py[cod]
+db.sqlite3
+settings.py
+
+# OTHER
+node_modules
+.DS_Store
+.idea
+media
