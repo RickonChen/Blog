@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'blog',
-    'imagekit'
+    'imagekit',
+    'search'
 ]
 
 MEDIA_URL = '/media/'

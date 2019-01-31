@@ -690,4 +690,30 @@ form textarea#id_description {
   background-color: #ea45b1;
 }
 
+.search {
+  position: relative;
+  padding: 0 0.2em;
+}
+.search-count {
+  margin: 0 0 0.5em 0.3em;
+}
+.search-icon {
+  position: absolute;
+  top: 1.2em;
+  left: 1.4em;
+  font-size: 18px;
+  color: #ACACAC;
+}
+.search-input {
+  width: 100%;
+  padding: 1.1em 0 1em 3em;
+  margin-bottom: 0.8em;
+  border-radius: 3px;
+  border: 1px solid #E8E8E8;
+  color: #1067BF;
+  font-size: 1.2em;
+  font-weight: 300;
+  height: 3em;
+}
+
 /*# sourceMappingURL=style.css.map */
