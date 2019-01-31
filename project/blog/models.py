@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 from django.urls import reverse
 from django.utils.text import slugify
+from imagekit.models import ImageSpecField
+from pilkit.processors import ResizeToFill
 
 
 class Post(models.Model):
@@ -13,6 +15,10 @@ class Post(models.Model):
     description = models.TextField(default='', blank=True)
     body = models.TextField(default='', blank=True)
     image = models.ImageField(default='', blank=True, upload_to='post_images')
+    image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(250, 100)],
+                                     format='JPEG', options={'quality': 60})
+    image_large = ImageSpecField(source='image', processors=[ResizeToFill(700, 250)],
+                                 format='JPEG', options={'quality': 60})
 
     class Meta:
         ordering = ['-post_date']

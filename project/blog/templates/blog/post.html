@@ -8,7 +8,7 @@
         <span class="post-date">{{ item.post_date |date:"M d, Y" }}</span>
         <div class="post-description clearfix">{{ item.description }}</div>
         {% if item.image %}
-            <img alt="post-image" class="post-image" src="{{ item.image.url }}">
+            <img alt="post-image" class="post-image" src="{{ item.image_large.url }}">
         {% endif %}
         <div class="post-body">{{ item.body }}</div>
     </div>
