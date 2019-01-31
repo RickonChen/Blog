@@ -543,10 +543,12 @@ ul {
 .post-description {
   font-size: 1.3em;
   margin: 0.7em 0;
+  white-space: pre-wrap;
 }
 .post-body {
   margin: 0.3em 0;
   line-height: 1.5em;
+  white-space: pre-wrap;
 }
 .post-image {
   margin: 0.5em 0;

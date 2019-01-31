@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFit
+from .tag import *
 
 
 class Post(models.Model):
@@ -19,6 +20,7 @@ class Post(models.Model):
                                      format='JPEG', options={'quality': 60})
     image_large = ImageSpecField(source='image', processors=[ResizeToFit(700, 700)],
                                  format='JPEG', options={'quality': 60})
+    tags = models.ManyToManyField(Tag, blank=True)
 
     class Meta:
         ordering = ['-post_date']
