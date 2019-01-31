@@ -9,4 +9,9 @@
   @include for-999-up {
     width: 60em;
   }
+  &--no-box {
+    padding: 0;
+    background-color: inherit;
+    border: inherit;
+  }
 }

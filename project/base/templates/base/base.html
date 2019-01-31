@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>QuarkBlob</title>
+    <title>{% block title %}Home{% endblock %} | QuarkBlob</title>
     <link rel="stylesheet" href="{% static 'base/vendor/fontawesome/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'base/vendor/googlefonts/opensans/font.css' %}">
     <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
@@ -44,7 +44,8 @@
     <div class="header-slogan">Thoughts On <strong>Artificial Intelligence</strong>.</div>
 </div>
 
-<div class="main">
+<div class="main {% block hidebox %}{% endblock %}">
+    {% block h1 %}{% endblock %}
     {% block content %}{% endblock %}
 </div>
 

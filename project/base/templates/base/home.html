@@ -1,2 +1,6 @@
 {% extends 'base/base.html' %}
-{% block content %}<h1>Homepage</h1>{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block hidebox %}main--no-box {% endblock %}
+{% block content %}
+     {% include 'base/_grid.html' %}
+{% endblock %}

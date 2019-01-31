@@ -1,0 +1,21 @@
+.col {
+  float: left;
+}
+
+@include for-phone-only {
+  .col {
+    width: 100%;
+  }
+}
+
+@include for-tablet-portrait-up {
+  .col {
+    width: 50%;
+  }
+}
+
+@include for-tablet-landscape-up {
+  .col {
+    width: 33.33%;
+  }
+}
