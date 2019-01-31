@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <span class="post-author">By <strong>admin</strong></span>
+        <span class="post-date">{{ item.post_date |date:"M d, Y" }}</span>
+        <div class="post-description clearfix">{{ item.description }}</div>
+        {% if item.image %}
+            <img alt="post-image" class="post-image" src="{{ item.image.url }}">
+        {% endif %}
+        <div class="post-body">{{ item.body }}</div>
+    </div>
+{% endblock %}
