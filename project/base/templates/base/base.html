@@ -20,7 +20,7 @@
                href="{% url 'home' %}">Home</a>
         </li>
         <li class="menu-li">
-            <a class="menu-li-a" href="">Add Post</a>
+             <a class="menu-li-a {% url 'add_post' as add_post_url %} {% if request.get_full_path == add_post_url %} menu-li-a--active{% endif %}" href="{% url 'add_post' %}">Add post</a>
         </li>
         <li class="menu-li">
             <a class="menu-li-a" href="">About</a>

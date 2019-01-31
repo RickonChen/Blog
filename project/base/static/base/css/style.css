@@ -647,4 +647,47 @@ ul {
   background-color: #0c7ef2;
 }
 
+form label {
+  font-size: 18px;
+  display: block;
+  padding-bottom: 0.3em;
+  margin-top: 1em;
+}
+form .helptext {
+  display: inline-block;
+  margin-top: 0.2em;
+  font-style: italic;
+}
+form ul {
+  margin: 0;
+}
+form p {
+  margin: 0;
+}
+form input, form textarea, form select {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #E8E8E8;
+}
+form textarea#id_description {
+  height: 100px;
+}
+
+.submit {
+  display: inline-block;
+  width: auto;
+  background-color: #EF73C4;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+}
+.submit:hover {
+  background-color: #ea45b1;
+}
+
 /*# sourceMappingURL=style.css.map */
