@@ -11,5 +11,14 @@
             <img alt="post-image" class="post-image" src="{{ item.image_large.url }}">
         {% endif %}
         <div class="post-body">{{ item.body }}</div>
+        {% if item.tags %}
+            <ul class="tags">
+                {% for tag in item.tags.all %}
+                    <li class="tags-tag">
+                        <a class="tags-tag-a" href="{% url 'tag' tag.slug %}">{{ tag }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
 {% endblock %}
