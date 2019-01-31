@@ -4,7 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 from imagekit.models import ImageSpecField
-from pilkit.processors import ResizeToFill
+from pilkit.processors import ResizeToFit
 
 
 class Post(models.Model):
@@ -15,9 +15,9 @@ class Post(models.Model):
     description = models.TextField(default='', blank=True)
     body = models.TextField(default='', blank=True)
     image = models.ImageField(default='', blank=True, upload_to='post_images')
-    image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(250, 100)],
+    image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFit(250, 250)],
                                      format='JPEG', options={'quality': 60})
-    image_large = ImageSpecField(source='image', processors=[ResizeToFill(700, 250)],
+    image_large = ImageSpecField(source='image', processors=[ResizeToFit(700, 700)],
                                  format='JPEG', options={'quality': 60})
 
     class Meta:
