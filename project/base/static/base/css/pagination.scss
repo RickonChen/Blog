@@ -1,0 +1,29 @@
+.pagination {
+  text-align: center;
+  margin: 2em 0;
+  &-number {
+    padding: 0.3em 0.8em;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #AFAFAF;
+    &:hover {
+      background-color: #5EAEFD;
+    }
+  }
+  &-current {
+    background-color: #5EAEFD;
+  }
+  &-action {
+    margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+    font-size: 1.3em;
+    &:hover {
+      color: #3354AA;
+    }
+  }
+  &-previous, &-next {
+     color: #3354AA;
+  }
+}
