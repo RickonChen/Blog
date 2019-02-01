@@ -389,6 +389,22 @@ ul {
 .header-brand-name {
   color: #ccc;
 }
+.header-user {
+  display: none;
+  position: absolute;
+  top: 0.8em;
+  right: 1em;
+  color: #aaa;
+  font-size: 14px;
+}
+@media (min-width: 1200px) {
+  .header-user {
+    display: inherit;
+  }
+}
+.header-user:hover {
+  color: #fff;
+}
 .header-slogan {
   font-size: 18px;
   text-align: center;

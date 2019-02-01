@@ -20,7 +20,8 @@
                href="{% url 'home' %}">Home</a>
         </li>
         <li class="menu-li">
-             <a class="menu-li-a {% url 'add_post' as add_post_url %} {% if request.get_full_path == add_post_url %} menu-li-a--active{% endif %}" href="{% url 'add_post' %}">Add post</a>
+            <a class="menu-li-a {% url 'add_post' as add_post_url %} {% if request.get_full_path == add_post_url %} menu-li-a--active{% endif %}"
+               href="{% url 'add_post' %}">Add post</a>
         </li>
         <li class="menu-li">
             <a class="menu-li-a" href="">About</a>
@@ -30,17 +31,31 @@
          src="{% static 'base/images/hamburger.png' %}">
 
     <ul id="dropdown" class="dropdown">
-        <li class="dropdown-li
-    		   dropdown-li--active">
+        <li class="dropdown-li {% url 'home' as home_url %} {% if request.get_full_path == home_url %} dropdown-li--active{% endif %}">
             <a class="dropdown-li-a" href="/">Home</a>
         </li>
-        <li class="dropdown-li">
-            <a class="dropdown-li-a" href="/">Add Post</a>
+        <li class="dropdown-li  {% url 'add_post' as add_post_url %} {% if request.get_full_path == add_post_url %} dropdown-li--active{% endif %}">
+            <a class="dropdown-li-a" href="{% url 'add_post' %}">Add Post</a>
         </li>
         <li class="dropdown-li">
-            <a class="dropdown-li-a" href="/">About</a>
+            <a class="dropdown-li-a" href="/about/">About</a>
         </li>
+        {% if request.user.is_authenticated %}
+            <li class="dropdown-li">
+                <a class="dropdown-li-a" href="{% url 'logout' %}">Logout</a>
+            </li>
+        {% else %}
+            <li class="dropdown-li">
+                <a class="dropdown-li-a" href="{% url 'login' %}">login / register</a>
+            </li>
+        {% endif %}
     </ul>
+
+    {% if not request.user.is_authenticated %}
+        <a class="header-user show-mobile" href="{% url 'login' %}">
+            login / register
+        </a>
+    {% endif %}
     <div class="header-slogan">Never Stop <strong>Learning</strong>.</div>
 </div>
 
