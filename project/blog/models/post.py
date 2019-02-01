@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFit
+from django.contrib.auth.models import User
 from .tag import *
 
 
@@ -21,6 +22,7 @@ class Post(models.Model):
     image_large = ImageSpecField(source='image', processors=[ResizeToFit(700, 700)],
                                  format='JPEG', options={'quality': 60})
     tags = models.ManyToManyField(Tag, blank=True)
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-post_date']

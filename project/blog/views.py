@@ -15,7 +15,7 @@ def add_post(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             item = form.save(commit=False)
-            # todo will store author here...
+            item.author = request.user
             item.save()
             form.save_m2m()
             return redirect(item.get_absolute_url())
