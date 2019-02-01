@@ -732,4 +732,8 @@ form textarea#id_description {
   height: 3em;
 }
 
+.profile-field {
+  margin: 0.5em 0;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block h1 %}<h1>{{ title }}</h1>{% endblock %}
+{% block content %}
+<div class="profile">
+
+    <div class="profile-field">
+        Username: <span class="profile-username"><strong>{{ request.user }}</strong></span>
+    </div>
+
+    {% if request.user.profile.display_name %}
+
+        <div class="profile-field">
+            Displayname: <span class="profile-email"><strong>{{ request.user.profile.display_name }}</strong></span>
+        </div>
+
+    {% endif %}
+
+    <div class="profile-field">
+        Email: <span class="profile-email"><strong>{{ request.user.email }}</strong></span>
+    </div>
+
+    <div class="profile-field">
+        <a class="profile-logout submit" href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -24,3 +25,7 @@ class Register(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
+
+@login_required
+def profile(request):
+    return render(request, 'base/profile.html', { 'title': 'Profile' })

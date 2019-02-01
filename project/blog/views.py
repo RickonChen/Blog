@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render
 
 # Create your views here.
@@ -6,10 +7,12 @@ from django.shortcuts import render, get_object_or_404, redirect
 from blog.forms import PostForm
 from blog.models import Post
 
+@permission_required('blog.add_post')
 def post(request, slug=None):
     item = get_object_or_404(Post, slug=slug)
     return render(request, 'blog/post.html', {'item': item, 'title': item,})
 
+@permission_required('blog.edit_post')
 def add_post(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)

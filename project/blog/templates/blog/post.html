@@ -11,6 +11,9 @@
             {{ item.author }} {% endif %}</strong>
        </span>
         <span class="post-date">{{ item.post_date |date:"M d, Y" }}</span>
+        {% if perms.blog.change_post %}
+            | <a class="post-edit" href="{% url 'edit_post' item.id %}">Edit</a>
+        {% endif %}
         <div class="post-description clearfix">{{ item.description }}</div>
         {% if item.image %}
             <img alt="post-image" class="post-image" src="{{ item.image_large.url }}">
