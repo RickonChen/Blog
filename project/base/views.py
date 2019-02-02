@@ -9,7 +9,9 @@ from django.views import generic
 from base.forms import CustomUserCreationForm, CustomUserChangeForm
 from blog.models import Post, Tag
 from django.core.paginator import Paginator
+from django.utils.translation import gettext as _
 # Create your views here.
+
 
 def home(request):
     items = Post.objects.all()
@@ -44,3 +46,7 @@ class UserChange(LoginRequiredMixin, generic.UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+def about(request):
+    return render(request, 'base/about.html', {'title': _('About')})

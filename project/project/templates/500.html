@@ -1,0 +1,8 @@
+{% extends "e_base.html" %}
+{% load i18n %}
+
+{% block error_title %}
+    {% trans "Sorry, the service is not fully functional at the moment." %}
+    <div class="error-message-error">{% trans "Server Error (500)" %}</div>
+{% endblock %}
+{% block error_message %}{% trans "Server Error (500)" %}{% endblock %}

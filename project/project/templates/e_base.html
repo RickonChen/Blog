@@ -1,0 +1,43 @@
+<!doctype html>
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, init\
+ial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600\
+" rel="stylesheet">
+    <style>
+        .error {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.8em;
+            padding-top: 2em;
+            text-align: center;
+            line-height: 2em;
+            color: #333;
+        }
+
+        .error-message-error {
+            color: #666;
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        img {
+            border-radius: 3px;
+            width: 300px;
+        }
+
+        a {
+            color: #666;
+        }
+    </style>
+    <title>{% block error_message %}{% endblock %}</title>
+</head>
+<body class="error-page">
+<div class="error">
+    <div class="error-brand"><a class="error-brand-a" href="/">QuarkBlob.com</a></div>
+    <div class="error-message">{% block error_title %}{% endblock %}</div>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
 1. mark project folder as source folder at pycharm
 2. if 'python manage.py makemigrations' not work, could run command as 'python manage.py makemigrations <your_app_name>',
    then run 'python manage.py migrate'
+3. install https://mlocati.github.io/articles/gettext-iconv-windows.html for i18n

@@ -736,4 +736,9 @@ form textarea#id_description {
   margin: 0.5em 0;
 }
 
+.language-switcher select, .language-switcher-submit {
+  width: auto;
+  padding: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

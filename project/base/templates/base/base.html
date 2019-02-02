@@ -24,7 +24,7 @@
                href="{% url 'add_post' %}">Add post</a>
         </li>
         <li class="menu-li">
-            <a class="menu-li-a" href="">About</a>
+            <a class="menu-li-a {% url 'about' as about_url %} {% if request.get_full_path == about_url %} menu-li-a--active{% endif %}" href="{% url 'about' %}">{% trans 'About' %}</a>
         </li>
     </ul>
     <img onclick="toggleDropDownMenu()" class="mobile-menu toggle show-mobile" alt="menu"
@@ -38,7 +38,7 @@
             <a class="dropdown-li-a" href="{% url 'add_post' %}">Add Post</a>
         </li>
         <li class="dropdown-li">
-            <a class="dropdown-li-a" href="/about/">About</a>
+             <a class="dropdown-li-a" href="{% url 'about' %}">{% trans 'About' %}</a>
         </li>
         {% if request.user.is_authenticated %}
             <li class="dropdown-li">
@@ -73,7 +73,20 @@
 
 <div class="footer"></div>
 <div class="footer-bottom">
-    @ {% now "Y" %} QuarkBlob. All rights reserved.
+    <form class="language-switcher" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="/" >
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Go</button>
+    </form>
 </div>
 </body>
 <script type="application/javascript" src="{% static 'base/js/dropdown.js' %}"></script>

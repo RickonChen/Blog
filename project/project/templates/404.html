@@ -1,0 +1,7 @@
+{% extends "e_base.html" %}
+{% load i18n %}
+{% block error_title %}
+    {% trans "Sorry, we can't seem to find the page you are looking for." %}
+    <div class="error-message-error">{% trans "Page Not Found (404)" %}</div>
+{% endblock %}
+{% block error_message %}{% trans "Page Not Found (404)" %}{% endblock %}
