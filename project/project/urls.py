@@ -25,6 +25,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('search/', include('search.urls')),
     path('accounts/register/', views.Register.as_view(), name='register'),
+    path('accounts/change/<int:pk>/', views.UserChange.as_view(), name='user_change'),
     path('accounts/profile/', views.profile, name='profile'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('base.urls'))

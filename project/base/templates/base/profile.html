@@ -21,6 +21,8 @@
     </div>
 
     <div class="profile-field">
+        <a class="profile-edit submit" href="{% url 'user_change' request.user.pk%}">Edit profile</a>
+        <a class="profile-change-password submit" href="{% url 'password_change' %}">Change password</a>
         <a class="profile-logout submit" href="{% url 'logout' %}">Logout</a>
     </div>
 </div>
